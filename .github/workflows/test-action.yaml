@@ -1,24 +1,24 @@
 name: Test Squads V4 Program Upgrade
 
-on: [push, pull_request] # Trigger the workflow on push and pull request events
+on: [push, pull_request]
 
 jobs:
   test-action:
-    runs-on: ubuntu-latest # Run the job on an Ubuntu runner
+    runs-on: ubuntu-latest
     env:
       DEPLOYER_KEYPAIR: ${{ secrets.DEPLOYER_KEYPAIR }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2 # Checkout your repository
+        uses: actions/checkout@v2
 
       - name: Run Squads V4 Program Upgrade
-        uses: ./action.yaml # Use the relative path to your action in the repository
+        uses: ./
         with:
-          network-url: "https://api.devnet.solana.com" # Example input, change as needed
-          multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC" # Example input, change as needed
-          multisig-vault-index: "1" # Example input, change as needed
-          program-id: "example-program-id" # Example input, change as needed
-          buffer: "Hs93mJ3HC9qJz6ttpGGk12piv1bVxndv1RE86t585Duj" # Example input, change as needed
-          spill-address: "FU2pN8qudMjtBCnU6QAavsvhZFTgXrdJ8JkLRArRuZ4n" # Example input, change as needed
-          name: "Test Upgrade" # Example input, change as needed
+          network-url: "https://api.devnet.solana.com"
+          multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
+          multisig-vault-index: "1"
+          program-id: "example-program-id"
+          buffer: "Hs93mJ3HC9qJz6ttpGGk12piv1bVxndv1RE86t585Duj"
+          spill-address: "FU2pN8qudMjtBCnU6QAavsvhZFTgXrdJ8JkLRArRuZ4n"
+          name: "Test Upgrade"
           keypair: ${{ env.DEPLOYER_KEYPAIR }}
