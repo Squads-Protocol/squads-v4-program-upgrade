@@ -5,7 +5,8 @@ on: [push, pull_request] # Trigger the workflow on push and pull request events
 jobs:
   test-action:
     runs-on: ubuntu-latest # Run the job on an Ubuntu runner
-
+    env:
+      DEPLOYER_KEYPAIR: ${{ secrets.DEPLOYER_KEYPAIR }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2 # Checkout your repository
