@@ -22,16 +22,13 @@ jobs:
       - run: yarn build
 
   test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./action/action.yml
-        with:
-          network-url: "https://api.devnet.solana.com"
-          multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
-          multisig-vault-index: "1"
-          program-id: "example-program-id"
-          buffer: "Hs93mJ3HC9qJz6ttpGGk12piv1bVxndv1RE86t585Duj"
-          spill-address: "FU2pN8qudMjtBCnU6QAavsvhZFTgXrdJ8JkLRArRuZ4n"
-          name: "Test Upgrade"
-          keypair: ${{ env.DEPLOYER_KEYPAIR }}
+    uses: valentinmadrid/squads-v4-program-upgrade/.github/workflows/action.yml@main
+    with:
+      network-url: "https://api.devnet.solana.com"
+      multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
+      multisig-vault-index: "1"
+      program-id: "example-program-id"
+      buffer: "Hs93mJ3HC9qJz6ttpGGk12piv1bVxndv1RE86t585Duj"
+      spill-address: "FU2pN8qudMjtBCnU6QAavsvhZFTgXrdJ8JkLRArRuZ4n"
+      name: "Test Upgrade"
+      keypair: ${{ secrets.DEPLOYER_KEYPAIR }}
