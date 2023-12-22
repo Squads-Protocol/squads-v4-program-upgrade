@@ -1,0 +1,35 @@
+name: "Squads V4 program upgrade"
+description: "Squads v4 program upgrade Github Action"
+author: "Valentin Madrid"
+branding:
+  icon: "upload"
+  color: "black"
+inputs:
+  network-url:
+    description: "The Solana network to deploy to, can be "mainnet-beta", "testnet", "devnet", or a custom url"
+    required: true
+    default: "devnet"
+  multisig-pda:
+    description: "The multisig pda address"
+    required: true
+  multisig-vault-index:
+    description: "The multisig vault index"
+    required: true
+  program-id:
+    description: "The program id to upgrade"
+    required: true
+  buffer:
+    description: "The buffer where the program is uploaded to"
+    required: true
+  spill-address:
+    description: "The program multisig authority"
+    required: true
+  name:
+    description: "The name of this upgrade"
+    required: true
+  keypair:
+    description: "The keypair to use for deploys"
+    required: true
+runs:
+  using: "node18"
+  main: "dist/main.js"
