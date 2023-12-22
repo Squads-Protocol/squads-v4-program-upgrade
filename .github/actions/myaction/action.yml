@@ -5,9 +5,8 @@ branding:
   icon: "upload"
   color: "black"
 inputs:
-
   network-url:
-    description: "The Solana network to deploy to, can be "mainnet-beta", "testnet", "devnet", or a custom url"
+    description: "The Solana network to deploy to, can be mainnet-beta, testnet, devnet, or a custom url"
     required: true
   multisig-pda:
     description: "The multisig pda address"
