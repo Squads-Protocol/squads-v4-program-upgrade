@@ -1,5 +1,6 @@
 {
   "name": "squads-v4-program-upgrade",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
