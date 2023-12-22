@@ -30,5 +30,5 @@ inputs:
     description: "The keypair to use for deploys"
     required: true
 runs:
-  using: "node18"
+  using: "node16"
   main: "dist/main.js"
