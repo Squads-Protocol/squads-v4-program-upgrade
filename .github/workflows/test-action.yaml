@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2 # Checkout your repository
 
       - name: Run Squads V4 Program Upgrade
-        uses: ./ # Use the relative path to your action in the repository
+        uses: ./action.yaml # Use the relative path to your action in the repository
         with:
           network-url: "https://api.devnet.solana.com" # Example input, change as needed
           multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC" # Example input, change as needed
