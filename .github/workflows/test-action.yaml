@@ -16,7 +16,7 @@ jobs:
       - name: List files
         run: ls
 
-      - run: ls /actions
+      - run: ls /action
 
       - run: yarn
       - run: yarn build
