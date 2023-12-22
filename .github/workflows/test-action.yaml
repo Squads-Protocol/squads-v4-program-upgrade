@@ -17,7 +17,7 @@ jobs:
       - run: yarn build
 
       - name: Run Squads V4 Program Upgrade
-        uses: /
+        uses: ./action/action.yaml
         with:
           network-url: "https://api.devnet.solana.com"
           multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
