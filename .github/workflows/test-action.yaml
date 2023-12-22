@@ -6,8 +6,7 @@ jobs:
   test-action:
     runs-on: ubuntu-latest
 
-    env:
-      DEPLOYER_KEYPAIR: ${{ secrets.DEPLOYER_KEYPAIR }}
+    env: DEPLOYER_KEYPAIR: ${{ secrets.DEPLOYER_KEYPAIR }}
 
     steps:
       - name: Checkout Repository
@@ -17,7 +16,7 @@ jobs:
       - run: yarn build
 
       - name: Run Squads V4 Program Upgrade
-        uses: ./action
+        uses: ./action/action.yml
         with:
           network-url: "https://api.devnet.solana.com"
           multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
