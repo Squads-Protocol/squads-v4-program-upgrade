@@ -16,13 +16,16 @@ jobs:
       - name: List files
         run: ls
 
-      - run: ls ./action
+      - run: ls /action
 
       - run: yarn
       - run: yarn build
 
-      - name: Run Squads V4 Program Upgrade
-        uses: ./action/action.yml
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./action/action.yml
         with:
           network-url: "https://api.devnet.solana.com"
           multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
