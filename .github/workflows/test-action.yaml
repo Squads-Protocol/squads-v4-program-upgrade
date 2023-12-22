@@ -1,0 +1,23 @@
+name: Test Squads V4 Program Upgrade
+
+on: [push, pull_request] # Trigger the workflow on push and pull request events
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest # Run the job on an Ubuntu runner
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2 # Checkout your repository
+
+      - name: Run Squads V4 Program Upgrade
+        uses: ./path-to-your-action # Use the relative path to your action in the repository
+        with:
+          network-url: "https://api.devnet.solana.com" # Example input, change as needed
+          multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC" # Example input, change as needed
+          multisig-vault-index: "1" # Example input, change as needed
+          program-id: "example-program-id" # Example input, change as needed
+          buffer: "Hs93mJ3HC9qJz6ttpGGk12piv1bVxndv1RE86t585Duj" # Example input, change as needed
+          spill-address: "FU2pN8qudMjtBCnU6QAavsvhZFTgXrdJ8JkLRArRuZ4n" # Example input, change as needed
+          name: "Test Upgrade" # Example input, change as needed
+          keypair: ${{ env.DEPLOYER_KEYPAIR }}
