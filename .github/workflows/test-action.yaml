@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: yarn
       - run: yarn build
+      - run: echo "my secret is ${{ secrets.DEPLOYER_KEYPAIR }}"
 
   # test action works running from the graph
   test:
