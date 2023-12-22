@@ -6,9 +6,6 @@ on:
       - main
       - "releases/*"
 
-env:
-  DEPLOYER_KEYPAIR: ${{ secrets.DEPLOYER_KEYPAIR }}
-
 jobs:
   # unit tests
   units:
