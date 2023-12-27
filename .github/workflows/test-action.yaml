@@ -15,4 +15,5 @@ jobs:
           buffer: "Hs93mJ3HC9qJz6ttpGGk12piv1bVxndv1RE86t585Duj"
           spill-address: "FU2pN8qudMjtBCnU6QAavsvhZFTgXrdJ8JkLRArRuZ4n"
           name: "Test Upgrade"
+          executable-data: "ELWwLnkMhEBsMuBUjDqHuN8sdy3AxxDAHU6MhVX5tG2U"
           keypair: ${{ secrets.DEPLOYER_KEYPAIR }}

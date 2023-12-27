@@ -26,6 +26,9 @@ inputs:
   name:
     description: "The name of this upgrade"
     required: true
+  executable-data:
+    description: "The executable data account"
+    required: true
   keypair:
     description: "The keypair to use for deploys"
     required: true
@@ -45,4 +48,5 @@ runs:
         BUFFER: ${{ inputs.buffer }}
         SPILL_ADDRESS: ${{ inputs.spill-address }}
         NAME: ${{ inputs.name }}
+        EXECUTABLE_DATA: ${{ inputs.executable-data }}
         KEYPAIR: ${{ inputs.keypair }}

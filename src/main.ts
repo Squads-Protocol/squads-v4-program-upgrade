@@ -22,6 +22,7 @@ async function initialize() {
   const spillAddress = process.env.SPILL_ADDRESS!;
   const name = process.env.NAME!;
   const keypair = process.env.KEYPAIR!;
+  const executableData = process.env.EXECUTABLE_DATA!;
 
   console.log(`Network URL: ${networkUrl}`);
   console.log(`Multisig PDA: ${multisigPda}`);
@@ -30,7 +31,8 @@ async function initialize() {
   console.log(`Buffer: ${buffer}`);
   console.log(`Spill Address: ${spillAddress}`);
   console.log(`Name: ${name}`);
-  console.log(`Keypair: ${keypair}`);
+  console.log(`Executable Data: ${executableData}`);
+  console.log(`Keypair: ***`);
   console.log("Initializing...");
 
   let multisigVaultIndexNumber = Number(multisigVaultIndex);
