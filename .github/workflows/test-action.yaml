@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./
         with:
-          network-url: "https://api.devnet.solana.com"
+          network-url: "https://api.mainnet-beta.solana.com"
           multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
           multisig-vault-index: "1"
           program-id: "89xd9GGQ6gd9qcxciu5TAcH1WSbwVuMTgDseh7Vge5tp"
