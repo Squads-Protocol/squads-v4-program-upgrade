@@ -32,11 +32,11 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: npm install
-      shell: bash
-    - run: npm run dev
-      shell: bash
     - name: Debug
       run: |
         echo "network-url input: ${{ inputs.network-url }}"
+      shell: bash
+    - run: npm install
+      shell: bash
+    - run: npm run dev
       shell: bash
