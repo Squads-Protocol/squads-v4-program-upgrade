@@ -36,3 +36,6 @@ runs:
       shell: bash
     - run: npm run dev
       shell: bash
+    - name: Debug
+      run: |
+        echo "network-url input: ${{ inputs.network-url }}"
