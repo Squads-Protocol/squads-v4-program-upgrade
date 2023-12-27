@@ -5,14 +5,14 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "ts-node --experimental-specifier-resolution=node ./src/main.ts ",
+		"dev": "ts-node --experimental-specifier-resolution=node ./src/main.ts",
 		"build": "tsc",
 		"postinstall": "patch-package"
 	},
 	"devDependencies": {
 		"@types/inquirer": "^9.0.3",
 		"patch-package": "^8.0.0",
-		"ts-node": "^10.9.1",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.0.2"
 	},
 	"dependencies": {
