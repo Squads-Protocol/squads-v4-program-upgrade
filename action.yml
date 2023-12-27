@@ -30,5 +30,13 @@ inputs:
     description: "The keypair to use for deploys"
     required: true
 runs:
-  using: "node16"
-  main: "exec.cjs"
+  using: "composite"
+  steps:
+    - run: |
+        curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+        sudo apt-get install -y nodejs
+      shell: bash
+    - run: npm install
+      shell: bash
+    - run: npm run dev
+      shell: bash
