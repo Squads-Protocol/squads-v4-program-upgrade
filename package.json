@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "ts-node --experimental-specifier-resolution=node ./src/main.ts",
+		"dev": "ts-node --esm --experimental-specifier-resolution=node ./src/main.ts",
 		"build": "tsc",
 		"postinstall": "patch-package"
 	},
