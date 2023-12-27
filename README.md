@@ -7,7 +7,8 @@ Example usage:
 ```yml
 steps:
   - uses: actions/checkout@v4
-  - uses: ./
+  - name: Upgrade program
+    uses: valentinmadrid/squads-v4-program-upgrade@beta
     with:
       network-url: "https://api.mainnet-beta.solana.com"
       multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
