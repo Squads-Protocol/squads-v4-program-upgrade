@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import * as core from "@actions/core";
 import {
   AccountMeta,
   Connection,
@@ -9,7 +9,6 @@ import {
   TransactionInstruction,
   TransactionMessage,
 } from "@solana/web3.js";
-import * as core from "@actions/core";
 import * as multisig from "@sqds/multisig";
 import { BN } from "@marinade.finance/marinade-ts-sdk";
 import { keypairFrom } from "./utils.js";
