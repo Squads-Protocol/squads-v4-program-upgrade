@@ -1,23 +1,27 @@
 {
-  "name": "squads-v4-program-upgrade",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "@actions/core": "^1.10.1",
-    "@coral-xyz/anchor": "^0.29.0",
-    "@solana/web3.js": "^1.87.6",
-    "@sqds/multisig": "^1.12.0"
-  }
+	"name": "squads-v4-program-upgrade",
+	"main": "lib/main.js",
+	"private": false,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "ts-node --experimental-specifier-resolution=node ./src/main.ts ",
+		"build": "tsc",
+		"postinstall": "patch-package"
+	},
+	"devDependencies": {
+		"@types/inquirer": "^9.0.3",
+		"patch-package": "^8.0.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.2"
+	},
+	"dependencies": {
+		"@actions/core": "^1.10.1",
+		"@marinade.finance/marinade-ts-sdk": "^5.0.6",
+		"@solana/web3.js": "^1.78.4",
+		"@sqds/multisig": "^1.9.0",
+		"bs58": "^5.0.0",
+		"chalk": "^5.3.0",
+		"inquirer": "^9.2.11"
+	}
 }

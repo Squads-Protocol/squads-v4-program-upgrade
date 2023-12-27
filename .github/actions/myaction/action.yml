@@ -31,4 +31,8 @@ inputs:
     required: true
 runs:
   using: "node16"
+<<<<<<< Updated upstream
   main: "./../../../dist/main.cjs"
+=======
+  main: "npm run dev"
+>>>>>>> Stashed changes

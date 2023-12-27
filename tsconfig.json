@@ -1,31 +1,25 @@
 {
-    "compilerOptions": {
-      /* Basic Options */
-      "target": "es6",                                 // Specify ECMAScript target version
-      "module": "commonjs",                            // Specify module code generation
-      "lib": ["es6"],                                  // Specify library files to be included in the compilation
-      "declaration": true,                             // Generates corresponding '.d.ts' file
-      "outDir": "./dist",                              // Redirect output structure to the directory
-      "rootDir": "./src",                              // Specify the root directory of input files
-      "strict": true,                                  // Enable all strict type-checking options
-      "esModuleInterop": true,                         // Enables emit interoperability between CommonJS and ES Modules
-  
-      /* Additional Checks */
-      "noImplicitAny": true,                           // Raise error on expressions and declarations with an implied 'any' type
-      "strictNullChecks": true,                        // Enable strict null checks
-      "strictFunctionTypes": true,                     // Enable strict checking of function types
-      "strictBindCallApply": true,                     // Enable strict 'bind', 'call', and 'apply' methods on functions
-      "noImplicitThis": true,                          // Raise error on 'this' expressions with an implied 'any' type
-      "alwaysStrict": true,                            // Parse in strict mode and emit "use strict" for each source file
-  
-      /* Source Map Options */
-      "sourceMap": true                                // Generates corresponding '.map' file
-    },
-    "include": [
-      "src/**/*"                                      // Include all files in the src directory
-    ],
-    "exclude": [
-      "node_modules",                                 // Exclude the node_modules directory
-      "**/*.spec.ts"                                  // Exclude test files
-    ]
-  }
+	"compilerOptions": {
+		"target": "ES2022",
+		"useDefineForClassFields": true,
+		"module": "NodeNext",
+		"lib": ["ES2020"],
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"outDir": "lib",
+
+		/* Bundler mode */
+		"moduleResolution": "NodeNext",
+		"resolveJsonModule": true,
+
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true
+	},
+	"ts-node": {
+		"esm": true
+	},
+	"include": ["src"]
+}
