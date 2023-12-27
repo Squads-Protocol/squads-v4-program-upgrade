@@ -40,7 +40,7 @@ async function initialize() {
   const multisigVault = multisig.getVaultPda({
     multisigPda: new PublicKey(multisigPda),
     index: multisigVaultIndexNumber,
-  });
+  })[0];
 
   console.log(`Multisig Vault: ${multisigVault}`);
 
