@@ -42,6 +42,8 @@ async function initialize() {
     index: multisigVaultIndexNumber,
   });
 
+  console.log(`Multisig Vault: ${multisigVault}`);
+
   const upgradeData = new BN(3, 10);
   const keys: AccountMeta[] = [
     {
