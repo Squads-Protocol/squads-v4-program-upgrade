@@ -30,13 +30,5 @@ inputs:
     description: "The keypair to use for deploys"
     required: true
 runs:
-  using: "composite"
-  steps:
-    - name: Debug
-      run: |
-        echo "network-url input: ${{ inputs.network-url }}"
-      shell: bash
-    - run: npm install
-      shell: bash
-    - run: npm run dev
-      shell: bash
+  using: "node16"
+  main: "exec.cjs"
