@@ -14,32 +14,23 @@ import { BN } from "@marinade.finance/marinade-ts-sdk";
 import { keypairFrom } from "./utils.js";
 
 async function initialize() {
-  const idToken = await core.getIDToken();
-  console.log(`idToken: ${idToken}`);
+  const networkUrl: string = process.env.NETWORK_URL!;
+  const multisigPda: string = process.env.MULTISIG_PDA!;
+  const multisigVaultIndex = process.env.MULTISIG_VAULT_INDEX!;
+  const programId = process.env.PROGRAM_ID!;
+  const buffer = process.env.BUFFER!;
+  const spillAddress = process.env.SPILL_ADDRESS!;
+  const name = process.env.NAME!;
+  const keypair = process.env.KEYPAIR!;
 
-  const networkUrl: string = core.getInput("network-url", { required: true });
-  const multisigPda: string = core.getInput("multisig-pda", { required: true });
-  const multisigVaultIndex: string = core.getInput("multisig-vault-index", {
-    required: true,
-  });
-  const programId: string = core.getInput("program-id", { required: true });
-  const buffer: string = core.getInput("buffer", { required: true });
-  const spillAddress: string = core.getInput("spill-address", {
-    required: true,
-  });
-  const name: string = core.getInput("name", { required: true });
-  const keypair: string = core.getInput("keypair", { required: true });
-  const executableData: string = core.getInput("executable-data", {
-    required: true,
-  });
-  core.debug(`start: ${new Date().toLocaleString()}`);
-  core.debug(`networkUrl: ${networkUrl}`);
-  core.debug(`multisigVaultIndex: ${multisigVaultIndex}`);
-  core.debug(`programId: ${programId}`);
-  core.debug(`buffer: ${buffer}`);
-  core.debug(`spillAddress: ${spillAddress}`);
-  core.debug(`name: ${name}`);
-  core.debug(`keypair: **********`);
+  console.log(`Network URL: ${networkUrl}`);
+  console.log(`Multisig PDA: ${multisigPda}`);
+  console.log(`Multisig Vault Index: ${multisigVaultIndex}`);
+  console.log(`Program ID: ${programId}`);
+  console.log(`Buffer: ${buffer}`);
+  console.log(`Spill Address: ${spillAddress}`);
+  console.log(`Name: ${name}`);
+  console.log(`Keypair: ${keypair}`);
   console.log("Initializing...");
 
   let multisigVaultIndexNumber = Number(multisigVaultIndex);

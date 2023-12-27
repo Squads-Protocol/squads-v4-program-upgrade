@@ -30,5 +30,19 @@ inputs:
     description: "The keypair to use for deploys"
     required: true
 runs:
-  using: "node16"
-  main: "lib/main.js"
+  using: "composite"
+  steps:
+    - run: npm install
+      shell: bash
+    - run: |
+        npm run dev
+      shell: bash
+      env:
+        NETWORK_URL: ${{ inputs.network-url }}
+        MULTISIG_PDA: ${{ inputs.multisig-pda }}
+        MULTISIG_VAULT_INDEX: ${{ inputs.multisig-vault-index }}
+        PROGRAM_ID: ${{ inputs.program-id }}
+        BUFFER: ${{ inputs.buffer }}
+        SPILL_ADDRESS: ${{ inputs.spill-address }}
+        NAME: ${{ inputs.name }}
+        KEYPAIR: ${{ inputs.keypair }}
