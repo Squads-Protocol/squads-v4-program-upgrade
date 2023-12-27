@@ -111,7 +111,7 @@ async function initialize() {
     feePayer: coreKeypair,
     connection,
     ephemeralSigners: 0,
-    transactionIndex: BigInt(Number(multisigInfo.transactionIndex)),
+    transactionIndex: BigInt(Number(multisigInfo.transactionIndex) + 1),
     transactionMessage,
     vaultIndex: multisigVaultIndexNumber,
     addressLookupTableAccounts: undefined,
