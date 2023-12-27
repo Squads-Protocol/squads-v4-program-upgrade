@@ -90,6 +90,11 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
+"@esbuild/linux-x64@0.19.10":
+  version "0.19.10"
+  resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.19.10.tgz"
+  integrity sha512-SpYNEqg/6pZYoc+1zLCjVOYvxfZVZj6w0KROZ3Fje/QrM3nfvT2llI+wmKSrWuX6wmZeTapbarvuNNK/qepSgA==
+
 "@fastify/busboy@^2.0.0":
   version "2.1.0"
   resolved "https://registry.npmjs.org/@fastify/busboy/-/busboy-2.1.0.tgz"
@@ -737,6 +742,35 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
+esbuild@~0.19.10:
+  version "0.19.10"
+  resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.19.10.tgz"
+  integrity sha512-S1Y27QGt/snkNYrRcswgRFqZjaTG5a5xM3EQo97uNBnH505pdzSNe/HLBq1v0RO7iK/ngdbhJB6mDAp0OK+iUA==
+  optionalDependencies:
+    "@esbuild/aix-ppc64" "0.19.10"
+    "@esbuild/android-arm" "0.19.10"
+    "@esbuild/android-arm64" "0.19.10"
+    "@esbuild/android-x64" "0.19.10"
+    "@esbuild/darwin-arm64" "0.19.10"
+    "@esbuild/darwin-x64" "0.19.10"
+    "@esbuild/freebsd-arm64" "0.19.10"
+    "@esbuild/freebsd-x64" "0.19.10"
+    "@esbuild/linux-arm" "0.19.10"
+    "@esbuild/linux-arm64" "0.19.10"
+    "@esbuild/linux-ia32" "0.19.10"
+    "@esbuild/linux-loong64" "0.19.10"
+    "@esbuild/linux-mips64el" "0.19.10"
+    "@esbuild/linux-ppc64" "0.19.10"
+    "@esbuild/linux-riscv64" "0.19.10"
+    "@esbuild/linux-s390x" "0.19.10"
+    "@esbuild/linux-x64" "0.19.10"
+    "@esbuild/netbsd-x64" "0.19.10"
+    "@esbuild/openbsd-x64" "0.19.10"
+    "@esbuild/sunos-x64" "0.19.10"
+    "@esbuild/win32-arm64" "0.19.10"
+    "@esbuild/win32-ia32" "0.19.10"
+    "@esbuild/win32-x64" "0.19.10"
+
 escape-string-regexp@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
@@ -829,6 +863,13 @@ get-intrinsic@^1.0.2, get-intrinsic@^1.1.1, get-intrinsic@^1.1.3:
     has "^1.0.3"
     has-proto "^1.0.1"
     has-symbols "^1.0.3"
+
+get-tsconfig@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.7.2.tgz"
+  integrity sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==
+  dependencies:
+    resolve-pkg-maps "^1.0.0"
 
 glob@^7.1.3:
   version "7.2.3"
@@ -1325,6 +1366,11 @@ regenerator-runtime@^0.14.0:
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.14.0.tgz"
   integrity sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==
 
+resolve-pkg-maps@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/resolve-pkg-maps/-/resolve-pkg-maps-1.0.0.tgz"
+  integrity sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==
+
 restore-cursor@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/restore-cursor/-/restore-cursor-3.1.0.tgz"
@@ -1509,6 +1555,16 @@ tslib@^2.0.3, tslib@^2.1.0:
   version "2.6.2"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
+
+tsx@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.npmjs.org/tsx/-/tsx-4.7.0.tgz"
+  integrity sha512-I+t79RYPlEYlHn9a+KzwrvEwhJg35h/1zHsLC2JXvhC2mdynMv6Zxzvhv5EMV6VF5qJlLlkSnMVvdZV3PSIGcg==
+  dependencies:
+    esbuild "~0.19.10"
+    get-tsconfig "^4.7.2"
+  optionalDependencies:
+    fsevents "~2.3.3"
 
 tunnel@^0.0.6:
   version "0.0.6"
