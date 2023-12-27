@@ -1,1 +1,0 @@
-require('child_process').execSync('npm i && npm run dev', { stdio: 'inherit' });
