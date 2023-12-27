@@ -39,3 +39,4 @@ runs:
     - name: Debug
       run: |
         echo "network-url input: ${{ inputs.network-url }}"
+      shell: bash
