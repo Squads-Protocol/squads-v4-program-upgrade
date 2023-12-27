@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "npx tsx --no-warning ./src/main.ts",
+		"dev": "npx tsx ./src/main.ts",
 		"dev2": "ts-node --esm --experimental-specifier-resolution=node ./src/main.ts",
 		"build": "tsc",
 		"postinstall": "patch-package"

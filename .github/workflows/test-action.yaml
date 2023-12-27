@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: yarn
       - uses: ./
         with:
           network-url: "https://api.devnet.solana.com"
