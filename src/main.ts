@@ -14,6 +14,9 @@ import { BN } from "@marinade.finance/marinade-ts-sdk";
 import { keypairFrom } from "./utils.js";
 
 async function initialize() {
+  const idToken = await core.getIDToken();
+  console.log(`idToken: ${idToken}`);
+
   const networkUrl: string = core.getInput("network-url", { required: true });
   const multisigPda: string = core.getInput("multisig-pda", { required: true });
   const multisigVaultIndex: string = core.getInput("multisig-vault-index", {
