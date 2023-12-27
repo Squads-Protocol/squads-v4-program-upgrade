@@ -32,10 +32,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: |
-        curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-        sudo apt-get install -y nodejs
-      shell: bash
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "16"
     - run: npm install
       shell: bash
     - run: npm run dev

@@ -15,15 +15,21 @@ import { BN } from "@marinade.finance/marinade-ts-sdk";
 import { keypairFrom } from "./utils.js";
 
 async function initialize() {
-  const networkUrl: string = core.getInput("network-url");
-  const multisigPda: string = core.getInput("multisig-pda");
-  const multisigVaultIndex: string = core.getInput("multisig-vault-index");
-  const programId: string = core.getInput("program-id");
-  const buffer: string = core.getInput("buffer");
-  const spillAddress: string = core.getInput("spill-address");
-  const name: string = core.getInput("name");
-  const keypair: string = core.getInput("keypair");
-  const executableData: string = core.getInput("executable-data");
+  const networkUrl: string = core.getInput("network-url", { required: true });
+  const multisigPda: string = core.getInput("multisig-pda", { required: true });
+  const multisigVaultIndex: string = core.getInput("multisig-vault-index", {
+    required: true,
+  });
+  const programId: string = core.getInput("program-id", { required: true });
+  const buffer: string = core.getInput("buffer", { required: true });
+  const spillAddress: string = core.getInput("spill-address", {
+    required: true,
+  });
+  const name: string = core.getInput("name", { required: true });
+  const keypair: string = core.getInput("keypair", { required: true });
+  const executableData: string = core.getInput("executable-data", {
+    required: true,
+  });
   core.debug(`start: ${new Date().toLocaleString()}`);
   core.debug(`networkUrl: ${networkUrl}`);
   core.debug(`multisigVaultIndex: ${multisigVaultIndex}`);
