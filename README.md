@@ -12,7 +12,7 @@ steps:
     with:
       network-url: "https://api.mainnet-beta.solana.com"
       multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
-      multisig-vault-index: "1"
+      multisig-vault-index: "0"
       program-id: "89xd9GGQ6gd9qcxciu5TAcH1WSbwVuMTgDseh7Vge5tp"
       buffer: "Hs93mJ3HC9qJz6ttpGGk12piv1bVxndv1RE86t585Duj"
       spill-address: "FU2pN8qudMjtBCnU6QAavsvhZFTgXrdJ8JkLRArRuZ4n"
