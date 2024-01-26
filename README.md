@@ -8,7 +8,7 @@ Example usage:
 steps:
   - uses: actions/checkout@v4
   - name: Upgrade program
-    uses: valentinmadrid/squads-v4-program-upgrade@beta
+    uses: Squads-Protocol/squads-v4-program-upgrade@beta
     with:
       network-url: "https://api.mainnet-beta.solana.com"
       multisig-pda: "Aumm6P4VT4RcZUspSBRRkTYt2RFCWVfUhci23LrFNfZC"
