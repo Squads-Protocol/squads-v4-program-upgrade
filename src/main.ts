@@ -33,7 +33,7 @@ async function initialize() {
   console.log(`Spill Address: ${spillAddress}`);
   console.log(`Name: ${name}`);
   console.log(`Executable Data: ${executableData}`);
-  console.log(`IDL Buffer: ${idlBuffer !== undefined ? idlBuffer : "None"}`);
+  console.log(`IDL Buffer: ${idlBuffer ? idlBuffer : "None"}`);
   console.log(`Keypair: ***`);
   console.log("Initializing...");
 
@@ -110,7 +110,7 @@ async function initialize() {
   });
 
   let idlKeys: AccountMeta[];
-  if (idlBuffer !== undefined) {
+  if (idlBuffer) {
     idlKeys = [
       {
         pubkey: new PublicKey(idlBuffer),
