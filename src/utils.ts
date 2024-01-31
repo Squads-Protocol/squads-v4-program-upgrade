@@ -33,3 +33,14 @@ export const keypairFrom = (s: string, n?: string): Keypair => {
     }
   }
 };
+
+export const getIDLPDA = async (programId: PublicKey) => {
+  const [base] = PublicKey.findProgramAddressSync([], programId);
+  return PublicKey.createWithSeed(base, "anchor:idl", programId);
+};
+
+const IDL_UPGRADE_INSTRUCTION_DISCRIMINATOR = "40f4bc78a7e9690a03";
+
+export const IDL_DISCRIMINATOR = utils.bytes.hex.decode(
+  `${IDL_UPGRADE_INSTRUCTION_DISCRIMINATOR}`
+);

@@ -11,7 +11,7 @@ import {
 } from "@solana/web3.js";
 import * as multisig from "@sqds/multisig";
 import { BN } from "@marinade.finance/marinade-ts-sdk";
-import { keypairFrom } from "./utils.js";
+import { IDL_DISCRIMINATOR, getIDLPDA, keypairFrom } from "./utils.js";
 
 async function initialize() {
   const networkUrl: string = process.env.NETWORK_URL!;
@@ -23,6 +23,7 @@ async function initialize() {
   const name = process.env.NAME!;
   const keypair = process.env.KEYPAIR!;
   const executableData = process.env.EXECUTABLE_DATA!;
+  const idlBuffer = process.env.IDL_BUFFER;
 
   console.log(`Network URL: ${networkUrl}`);
   console.log(`Multisig PDA: ${multisigPda}`);
@@ -32,6 +33,7 @@ async function initialize() {
   console.log(`Spill Address: ${spillAddress}`);
   console.log(`Name: ${name}`);
   console.log(`Executable Data: ${executableData}`);
+  console.log(`IDL Buffer: ${idlBuffer !== undefined ? idlBuffer : "None"}`);
   console.log(`Keypair: ***`);
   console.log("Initializing...");
 
@@ -107,6 +109,37 @@ async function initialize() {
     ],
   });
 
+  let idlKeys: AccountMeta[];
+  if (idlBuffer !== undefined) {
+    idlKeys = [
+      {
+        pubkey: new PublicKey(idlBuffer),
+        isSigner: false,
+        isWritable: true,
+      },
+      {
+        pubkey: await getIDLPDA(new PublicKey(programId)),
+        isSigner: false,
+        isWritable: true,
+      },
+      {
+        pubkey: new PublicKey(multisigVault),
+        isSigner: true,
+        isWritable: true,
+      },
+    ];
+
+    transactionMessage.instructions.push(
+      new TransactionInstruction({
+        programId: new PublicKey(programId),
+        data: IDL_DISCRIMINATOR,
+        keys: idlKeys,
+      })
+    );
+  } else {
+    core.info("No IDL Buffer provided, skipping IDL upgrade");
+  }
+
   const transactionSignature = await multisig.rpc.vaultTransactionCreate({
     multisigPda: new PublicKey(multisigPda),
     creator: coreKeypair.publicKey,
@@ -120,7 +153,7 @@ async function initialize() {
     memo: name,
   });
 
-  core.info(`transactionSignature: ${transactionSignature}`);
+  core.info(`Transaction signature: ${transactionSignature}`);
   core.info("Proposal has been created, execute it on the Squads app.");
 }
 

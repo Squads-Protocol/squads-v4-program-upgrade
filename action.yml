@@ -32,6 +32,9 @@ inputs:
   keypair:
     description: "The keypair to use for deploys"
     required: true
+  idl-buffer:
+    description: "The idl buffer"
+    required: false
 runs:
   using: "composite"
   steps:
@@ -50,3 +53,4 @@ runs:
         NAME: ${{ inputs.name }}
         EXECUTABLE_DATA: ${{ inputs.executable-data }}
         KEYPAIR: ${{ inputs.keypair }}
+        IDL_BUFFER: ${{ inputs.idl-buffer }}
