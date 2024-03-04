@@ -3,7 +3,7 @@ description: "Squads v4 program upgrade Github Action"
 author: "Valentin Madrid"
 branding:
   icon: "upload"
-  color: "black"
+  color: "gray-dark"
 inputs:
   network-url:
     description: "The Solana network to deploy to, can be mainnet-beta, testnet, devnet, or a custom url"

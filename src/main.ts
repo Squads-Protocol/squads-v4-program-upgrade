@@ -2,7 +2,6 @@ import * as core from "@actions/core";
 import {
   AccountMeta,
   Connection,
-  Keypair,
   PublicKey,
   SYSVAR_CLOCK_PUBKEY,
   SYSVAR_RENT_PUBKEY,
@@ -10,7 +9,7 @@ import {
   TransactionMessage,
 } from "@solana/web3.js";
 import * as multisig from "@sqds/multisig";
-import { BN } from "@marinade.finance/marinade-ts-sdk";
+import BN from "bn.js";
 import { IDL_DISCRIMINATOR, getIDLPDA, keypairFrom } from "./utils.js";
 
 async function initialize() {
