@@ -1,7 +1,6 @@
 {
 	"name": "squads-v4-program-upgrade",
 	"main": "lib/main.js",
-	"private": false,
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
