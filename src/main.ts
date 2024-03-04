@@ -2,7 +2,6 @@ import * as core from "@actions/core";
 import {
   AccountMeta,
   Connection,
-  Keypair,
   PublicKey,
   SYSVAR_CLOCK_PUBKEY,
   SYSVAR_RENT_PUBKEY,
